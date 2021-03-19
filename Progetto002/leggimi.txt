@@ -1,0 +1,2 @@
+Prima creare un nuovo progetto Java di "nome_a_scelta" e poi copiare i sorgenti nella cartella :
+[installation-path]\eclipse-workspace\"nome_a_scelta"\src (oppure utilizzare il tool di eclipse per importarli nella medesima cartella)
