@@ -1,7 +1,6 @@
 package eccezioni;
 
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class EccezioniRunner1 {
@@ -15,36 +14,33 @@ public class EccezioniRunner1 {
 		
 		int b=0;
 		
-		
+		String s="";
 
 		
 		do {
 		
+			
+			System.out.print("Prego inserire un numero (* per terminare): ");
+			Scanner sc = new Scanner(System.in);
+			s=sc.next();
+			
+			//b=Integer.parseInt(s);
+			
+			if (!s.equals("*")) {
 		
 		try {
-//			System.out.println(a[1]);
-//			System.out.println(a[3]);
-			
-			System.out.print("Prego inserire un numero: ");
-			Scanner sc = new Scanner(System.in);
-			b=sc.nextInt();
+
+			b=Integer.parseInt(s);
 			System.out.println("Hai inserito il numero: "+b);
 			sc = null;
 			} 
 		
 		
-		catch (InputMismatchException e) 
-		{
 			
-			System.out.println("Errore: inserimento valore non valido.");
 		
-		}
-		
-		
-		catch (ArrayIndexOutOfBoundsException e) 
+		catch (NumberFormatException e) 
 		{
-		System.out.println("Errore: riferimento array erroneo.");
-		
+		System.out.println("Errore: sono ammessi solo numeri e il carattere \"*\".");
 		}
 		
 		
@@ -53,14 +49,9 @@ public class EccezioniRunner1 {
 		System.out.println("Errore generico.");
 		}
 		
-		
-//		finally 
-//		{
-//		sc.close();
-//		System.out.println("Questa istruzione è da eseguire obbligatoriamente.");	
-///		}
+			}
 
-		} while(b != -1);		
+		} while(!s.equals("*"));		
 		
 		System.out.println("Termine regolare del programma");
 		//sc.close();
